@@ -9,7 +9,8 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "deploy": "wrangler pages publish dist"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "2.6.0",
@@ -18,5 +19,7 @@
     "parcel": "^2.6.0",
     "prettier": "^2.6.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "wrangler": "^2.0.8"
+  }
 }
