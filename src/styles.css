@@ -110,6 +110,15 @@ a {
   border-bottom-color: rgb(0, 102, 204);
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  font-weight: normal;
+}
+
+strong {
+  font-weight: normal;
+}
+
+p {
+  font-weight: 200;
 }
 
 .download-resume-link {
