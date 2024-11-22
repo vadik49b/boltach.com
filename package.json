@@ -10,16 +10,13 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "deploy": "wrangler pages publish dist"
+    "deploy": "scp -r dist/* root@195.201.119.238:/root/apps/boltach.com"
   },
   "devDependencies": {
-    "@parcel/packager-raw-url": "2.6.0",
-    "@parcel/transformer-sass": "2.6.0",
-    "@parcel/transformer-webmanifest": "2.6.0",
-    "parcel": "^2.6.0",
+    "@parcel/packager-raw-url": "^2.13.0",
+    "@parcel/transformer-sass": "^2.13.0",
+    "@parcel/transformer-webmanifest": "^2.13.0",
+    "parcel": "^2.13.0",
     "prettier": "^2.6.2"
-  },
-  "dependencies": {
-    "wrangler": "^2.0.8"
   }
 }
