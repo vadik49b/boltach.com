@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Boltach Com" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for(:title) || "Vadim Boltach" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://boltach.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vadim Boltach" />
+    <meta property="og:description" content="Software Engineer at Coursera" />
+    <meta
+      property="og:image"
+      content="/avatar_logo.jpeg"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="boltach.com" />
+    <meta property="twitter:url" content="https://boltach.com/" />
+    <meta name="twitter:title" content="Vadim Boltach" />
+    <meta name="twitter:description" content="Software Engineer at Coursera" />
+    <meta
+      name="twitter:image"
+      content="/avatar_logo.jpeg"
+    />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,16 +36,31 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+     <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="container">
     <%= yield %>
   </body>
 </html>
