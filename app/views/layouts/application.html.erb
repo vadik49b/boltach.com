@@ -31,7 +31,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
 
     <%= yield :head %>
@@ -63,7 +62,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container">
+  <body>
     <%= yield %>
   </body>
 </html>
