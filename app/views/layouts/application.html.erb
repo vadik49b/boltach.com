@@ -69,8 +69,9 @@
     <footer class="fixed bottom-0 left-0 right-0 text-left text-sm text-gray-600">
       <div class="flex flex-col gap-2 px-6 pb-6">
         <% unless authenticated? %>
-          <%= link_to new_session_path, class: "justify-center text-2xl hover:opacity-70 transition-opacity", aria: { label: "Sign in" } do %>
-            <span aria-hidden="true">🔒</span>
+          <%= link_to new_session_path, class: "relative inline-block w-6 h-6 group", aria: { label: "Sign in" } do %>
+            <%= image_tag "lock.svg", class: "absolute inset-0 w-full h-full transition-opacity duration-300 group-hover:opacity-0", aria: { hidden: true } %>
+            <%= image_tag "unlock.svg", class: "absolute inset-0 w-full h-full transition-opacity duration-300 opacity-0 group-hover:opacity-100", aria: { hidden: true } %>
           <% end %>
         <% end %>
 
