@@ -59,5 +59,23 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= yield %></body>
+  <body>
+    <% if authenticated? %>
+      <%= button_to "Log out", session_path, method: :delete, class: "fixed top-6 right-6 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-firacode cursor-pointer" %>
+    <% end %>
+
+    <%= yield %>
+
+    <footer class="fixed bottom-0 left-0 right-0 text-left text-sm text-gray-600">
+      <div class="flex flex-col gap-2 px-6 pb-6">
+        <% unless authenticated? %>
+          <%= link_to new_session_path, class: "justify-center text-2xl hover:opacity-70 transition-opacity", aria: { label: "Sign in" } do %>
+            <span aria-hidden="true">🔒</span>
+          <% end %>
+        <% end %>
+
+        <p>© <%= Time.current.year %> Vadim Boltach</p>
+      </div>
+    </footer>
+  </body>
 </html>
