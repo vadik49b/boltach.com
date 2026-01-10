@@ -1,4 +1,32 @@
-<div>
-  <h1 class="font-bold text-4xl">Trips#index</h1>
-  <p>Find me in app/views/trips/index.html.erb</p>
+<div class="max-w-4xl mx-auto px-4 py-8">
+  <h1 class="font-bold text-4xl mb-8">Trips</h1>
+
+  <section class="grid grid-cols-[12rem_1fr] gap-y-6 items-start">
+    <% current_year = nil %>
+    <% is_first_year = true %>
+
+    <% @trips.each do |trip| %>
+      <% show_year = (current_year != trip.entry_date.year)
+        current_year = trip.entry_date.year
+
+        if trip.entry_date.month == trip.exit_date.month && trip.entry_date.year == trip.exit_date.year
+          date_range = trip.entry_date.strftime("%B")
+        else
+          date_range = "#{trip.entry_date.strftime("%B")}–#{trip.exit_date.strftime("%B")}"
+        end %>
+
+      <% if show_year %>
+        <p class="col-span-2 font-semibold text-xl <%= 'mt-8' unless is_first_year %>">
+          <%= trip.entry_date.year %>
+        </p>
+        <% is_first_year = false %>
+      <% end %>
+
+      <p class="text-gray-600 whitespace-nowrap"><%= date_range %></p>
+
+      <p class="overflow-hidden text-ellipsis whitespace-nowrap">
+        <%= trip.name %>
+      </p>
+    <% end %>
+  </section>
 </div>
