@@ -1,13 +1,17 @@
 require "test_helper"
 
 class TripsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    sign_in_as(users(:one))
+  end
+
   test "should get index" do
-    get trips_index_url
+    get travel_url
     assert_response :success
   end
 
   test "should get show" do
-    get trips_show_url
+    get trip_url(trips(:one))
     assert_response :success
   end
 end
