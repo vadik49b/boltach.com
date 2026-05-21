@@ -9,19 +9,14 @@
       <span>
         London, UK
       </span>
-      <nav class="flex items-center gap-4" aria-label="Contact and preferences">
-        <a href="https://github.com/vadik49b" class="hover:underline underline-offset-4">github</a>
-        <a href="https://www.linkedin.com/in/vadik49b/" class="hover:underline underline-offset-4">linkedin</a>
-        <a href="mailto:vadim@boltach.com" class="hover:underline underline-offset-4">email</a>
-        <button
-          type="button"
-          data-theme-target="darkToggle"
-          data-action="theme#toggleDark"
-          aria-pressed="false"
-          aria-label="Toggle dark mode"
-          class="hover:underline underline-offset-4 cursor-pointer"
-        >☾ dark</button>
-      </nav>
+      <button
+        type="button"
+        data-theme-target="darkToggle"
+        data-action="theme#toggleDark"
+        aria-pressed="false"
+        aria-label="Toggle dark mode"
+        class="hover:underline underline-offset-4 cursor-pointer"
+      ><span data-theme-target="darkLabel">☾ dark</span></button>
     </div>
   </header>
 
@@ -51,6 +46,13 @@
             Trying to make web <s style="color: var(--muted);">sites</s> faster and more
             accessible.
           </p>
+          <nav class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm pt-2" aria-label="Contact">
+            <a href="mailto:vadim@boltach.com" class="hover:underline underline-offset-4">vadim@boltach.com</a>
+            <span aria-hidden="true" style="color: var(--muted);">·</span>
+            <a href="https://github.com/vadik49b" class="hover:underline underline-offset-4">github</a>
+            <span aria-hidden="true" style="color: var(--muted);">·</span>
+            <a href="https://www.linkedin.com/in/vadik49b/" class="hover:underline underline-offset-4">linkedin</a>
+          </nav>
         </div>
       </section>
 
@@ -64,9 +66,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <%
             cards = [
-              { name: "coursera", period: "2022 – 2024", location: "Toronto, Canada",
+              { name: "Coursera", period: "2022 – 2024", location: "Toronto, Canada",
                 desc: "Core contributor to Coursera's design system, developing shared components, leading large-scale codebase migrations, driving accessibility and right-to-left languages support, and rolling out design system adoption across ~100 engineers and designers org-wide." },
-              { name: "thriver", period: "2019 – 2021", location: "Toronto, Canada",
+              { name: "Thriver", period: "2019 – 2021", location: "Toronto, Canada",
                 desc: "Joined as one of the first senior engineers on a rapidly growing team, introducing engineering processes and best practices, improving app performance and reliability, and stabilizing releases through CI/CD, code standards, and a reliable E2E test suite." }
             ]
           %>
@@ -118,20 +120,18 @@
   </main>
 
   <footer class="border-t border-dashed text-[12px]" style="border-color: var(--rule);">
-    <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-3xl mx-auto px-6 py-3 flex items-center justify-between">
+      <span style="color: var(--muted);">
+        © <%= Time.current.year %> Vadim Boltach
+      </span>
       <% unless authenticated? %>
-        <%= link_to login_path, aria: { label: "Sign in" }, class: "inline-flex items-center justify-center -m-3 w-11 h-11 opacity-60 hover:opacity-100 transition-opacity" do %>
-          <svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+        <%= link_to login_path, aria: { label: "Sign in" }, class: "inline-flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity" do %>
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" class="translate-y-px">
             <rect x="1" y="6" width="10" height="7" rx="1"/>
             <path d="M3 6 V4 a3 3 0 0 1 6 0 V6"/>
           </svg>
         <% end %>
-      <% else %>
-        <span></span>
       <% end %>
-      <span style="color: var(--muted);">
-        © <%= Time.current.year %> Vadim Boltach
-      </span>
     </div>
   </footer>
 </div>

@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f4efe4;
-  --ink: #1c1b18;
-  --muted: #6f6b62;
-  --rule: #d8d1c0;
-  --card: #fbf8f0;
+  --paper: #f9f8fd;
+  --ink: #1c1b22;
+  --muted: #6b6878;
+  --rule: #e3e0eb;
+  --card: #f5f6fb;
   --accent: #2b6cb0;
-  --coral: #e07a5f;
+  --coral: #d27a6f;
 }
 
 html.dark {
