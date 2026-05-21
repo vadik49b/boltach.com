@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://boltach.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Vadim Boltach">
-    <meta property="og:description" content="Software Engineer at Coursera">
+    <meta property="og:description" content="Senior frontend engineer. Web applications, frontend tooling, accessibility.">
     <meta property="og:image" content="/avatar_logo.jpeg">
 
     <!-- Twitter Meta Tags -->
@@ -21,7 +21,7 @@
     <meta property="twitter:domain" content="boltach.com">
     <meta property="twitter:url" content="https://boltach.com/">
     <meta name="twitter:title" content="Vadim Boltach">
-    <meta name="twitter:description" content="Software Engineer at Coursera">
+    <meta name="twitter:description" content="Senior frontend engineer. Web applications, frontend tooling, accessibility.">
     <meta name="twitter:image" content="/avatar_logo.jpeg">
 
     <%= csrf_meta_tags %>
@@ -60,24 +60,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="md:pb-28">
+  <body>
     <% if authenticated? %>
-      <%= button_to "Log out", logout_path, method: :delete, class: "fixed top-6 right-6 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-firacode cursor-pointer" %>
+      <%= button_to "Log out", logout_path, method: :delete, class: "fixed top-6 right-6 px-4 py-2 text-sm rounded-lg cursor-pointer" %>
     <% end %>
 
     <%= yield %>
-
-    <footer class="mt-12 md:mt-0 md:fixed md:bottom-0 md:left-0 md:right-0 text-left text-sm text-gray-600">
-      <div class="flex flex-col gap-2 px-6 pb-6">
-        <% unless authenticated? %>
-          <%= link_to login_path, class: "relative inline-block w-6 h-6 group", aria: { label: "Sign in" } do %>
-            <%= image_tag "lock.svg", class: "absolute inset-0 w-full h-full transition-opacity duration-300 group-hover:opacity-0", aria: { hidden: true } %>
-            <%= image_tag "unlock.svg", class: "absolute inset-0 w-full h-full transition-opacity duration-300 opacity-0 group-hover:opacity-100", aria: { hidden: true } %>
-          <% end %>
-        <% end %>
-
-        <p>© <%= Time.current.year %> Vadim Boltach</p>
-      </div>
-    </footer>
   </body>
 </html>
