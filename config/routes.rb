@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resource :session
+  get    "login"  => "sessions#new",     as: :login
+  post   "login"  => "sessions#create"
+  delete "logout" => "sessions#destroy", as: :logout
   resources :passwords, param: :token
   resources :trips, only: [ :show ]
   get "travel" => "trips#index"
