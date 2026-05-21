@@ -83,6 +83,34 @@
           <% end %>
         </div>
       </section>
+
+      <section class="mt-14">
+        <h2 class="text-sm mb-4" style="color: var(--muted);">// open source</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <%
+            oss = [
+              { name: "anki-connect.rb",
+                href: "https://github.com/vadik49b/anki-connect.rb",
+                desc: "Ruby client for the AnkiConnect HTTP API — script Anki from Ruby applications to manage decks, notes, and cards." }
+            ]
+          %>
+          <% oss.each do |o| %>
+            <a
+              href="<%= o[:href] %>"
+              target="_blank"
+              rel="noopener"
+              class="group border rounded-lg p-5 flex flex-col gap-3"
+              style="border-color: var(--rule); background: var(--card);"
+            >
+              <div class="text-sm">
+                <span>┌─ <strong class="font-semibold"><%= o[:name] %></strong></span>
+              </div>
+              <p class="text-sm leading-relaxed" style="color: var(--ink);"><%= o[:desc] %></p>
+              <p class="text-[12px] mt-auto group-hover:underline underline-offset-4" style="color: var(--muted);"><%= o[:href].sub(%r{^https?://}, "") %></p>
+            </a>
+          <% end %>
+        </div>
+      </section>
     </div>
   </main>
 
