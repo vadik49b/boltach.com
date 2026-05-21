@@ -1,21 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
-
-  --color-paper: #f4efe4;
-  --color-ink: #1c1b18;
-  --color-muted: #6f6b62;
-  --color-rule: #d8d1c0;
-  --color-card: #fbf8f0;
-  --color-accent: #2b6cb0;
-  --color-coral: #e07a5f;
-  --color-live: #2f8f4f;
-}
-
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
   --paper: #f4efe4;
   --ink: #1c1b18;
@@ -24,7 +8,6 @@
   --card: #fbf8f0;
   --accent: #2b6cb0;
   --coral: #e07a5f;
-  --live: #2f8f4f;
 }
 
 html.dark {
@@ -35,7 +18,6 @@ html.dark {
   --card: #1a1814;
   --accent: #6aa9e0;
   --coral: #e89b86;
-  --live: #5cc77f;
 }
 
 html, body {
