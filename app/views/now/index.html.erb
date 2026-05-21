@@ -115,7 +115,17 @@
   </main>
 
   <footer class="border-t border-dashed text-[12px]" style="border-color: var(--rule);">
-    <div class="max-w-3xl mx-auto px-6 py-4 flex justify-end">
+    <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+      <% unless authenticated? %>
+        <%= link_to login_path, aria: { label: "Sign in" }, class: "inline-flex items-center justify-center -m-3 w-11 h-11 opacity-60 hover:opacity-100 transition-opacity" do %>
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+            <rect x="1" y="6" width="10" height="7" rx="1"/>
+            <path d="M3 6 V4 a3 3 0 0 1 6 0 V6"/>
+          </svg>
+        <% end %>
+      <% else %>
+        <span></span>
+      <% end %>
       <span style="color: var(--muted);">
         © <%= Time.current.year %> vadim boltach
       </span>
